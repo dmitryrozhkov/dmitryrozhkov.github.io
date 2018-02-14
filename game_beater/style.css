@@ -1,0 +1,260 @@
+body {
+            background: #FFF0C4;
+             font-family:Arial;
+        }
+
+
+                #IPage {
+                      margin: 0px auto;
+                }
+                #wrap{
+			margin: 20px auto;
+			width: 900px;
+			height: 700px;
+			background: orange;                      
+			position: relative;
+                        text-align: center;
+                        font-size: 40px;
+                        font-family:Arial;
+                        color:red;
+                        overflow: hidden;
+		}
+                #slider {	
+                        
+			width: 900px;			
+			height: 700px;			
+			position: absolute;
+			top: -700px;		
+			background:#73FFC9;	
+			text-align: center;
+                        Z-index:200;   
+                        opacity:0.8;                     
+		}
+
+                 #sliderLose {	
+                        
+			width: 900px;			
+			height: 700px;			
+			position: absolute;
+			top: -700px;		
+			background:#73FFC9;
+                        color: blue;	
+			text-align: center;
+                        Z-index:200;   
+                        opacity:0.8;                     
+		}
+
+		#wrap1 {
+			margin: 50px auto;
+			width: 800px;
+			height: 500px;
+			background: pink;
+                        /*background: #FFD8CD;*/
+			position: absolute;
+                        text-align: center;
+                        font-size: 40px;
+                        color:red;
+                        //Z-index:2;
+                        left:50px;
+			top: 50px;
+                        padding-top:30px;
+		}
+		#wrap2 {	
+                        margin: 30px auto;		
+			width: 600px;
+			height: 400px;
+			position: absolute;
+			left:150px;
+			top: 150px;
+                        //display:none;
+                       Z-index:10;        
+		}
+
+                #wrap3 {
+			margin: 40px auto;
+			width: 700px;
+			height: 450px;
+			/*background:#659400;*/
+                        background: black;
+			position: absolute;
+                        //text-align: center;
+                        //font-size: 30px;
+                        //color:red;
+                        Z-index:100;
+                        left:100px;
+			top:100px;
+                        opacity:0.7;
+                        //padding: 100px;                                          
+		}
+
+                #wrap4 {
+                        margin: 100px auto;
+                        width:500px;
+                        height: 190px;
+			background: #7CD8C4;
+                        color:red;
+                        font-family:Arial;
+                        Z-index:100;
+                        left:100px;
+			top:250px;
+                        opacity:1;
+                        //padding: 100px; 
+                         /*overflow: hidden;*/                          
+		}
+
+                 #start {
+                          display:none;
+                        }
+                  #stop {
+                          display:none;
+                        }
+              
+                  #table {
+                        display:block; 
+                        float:left;                       
+                       }
+		#myCanvas { 
+			/*background: #eee;*/  
+                        background: #A9FFFF;                      			
+		}
+
+
+label {
+    outline: red solid 0px;
+    display: block;
+    margin-top: 0px;
+    letter-spacing: 3px;
+    font-size: 30px;
+}
+
+input {
+    outline: black solid 0px;
+    width: 200px;
+    background: #efefef;
+    border: 1px solid #dedede;
+    padding: 5px;
+    /*margin-top: 3px;*/
+    font-size: 20px;
+    color: #3a3a3a;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+
+input:focus:focus {
+    border: #97d6eb solid 2px;                    
+}
+
+
+
+#nameButton {
+    outline: green solid 0px;
+    //display: block;
+    width: 127px;
+    height: 35px;
+    /*text-indent: -9999px;*/
+    border: none;
+    margin-top: 20px;
+    cursor: pointer;
+    color: white;
+    //background: #FFC802;
+     background: green;
+}
+
+#nameButton:hover {
+    opacity: 0.9;
+}
+
+#spaMain {
+        /*margin: 0  30px 0 200px;*/ 
+       margin: 0  2% 0 0;  
+}
+
+#spaRules {
+     /*margin: 0 30px 0 0px;*/
+       margin: 0 2% 0 0;
+}
+#spaGame {
+     /*margin: 0 30px 0 0px;*/
+      margin: 0 2% 0 0;
+}
+
+  #wrapTable {
+     margin: 20px auto;
+      width: 900px;
+	height: 400px;
+	background: pink;
+	position: relative;
+        text-align: center;
+        font-size: 40px;
+         font-family:Arial;
+      color:green;  
+      overflow: hidden   
+}
+
+ #tableRecords {	
+                        
+	/*width: 700px;*/			
+	/*height: 150px;*/
+        width: 900px;
+        height: 400px;		
+	position: absolute;
+        top: -400px;
+        /*left: 50%;*/
+	/*top: 50%;*/	
+        /*transform: translate(-50%,-50%);*/ 	
+	background:#73FFC9;	
+	text-align: center;
+        color: red;
+         font-family:Arial;
+        Z-index:200;   
+         opacity:0.7;
+        /*overflow: hidden;*/                    
+}
+
+#wrapGameRules {
+     margin: 10px auto;
+      /*width: 900px;*/
+        width: 70%;
+	height: 500px;
+	background:#FCFF50;
+        border: 3px solid red;
+        border-radius:10px;
+	position: relative;        
+        text-align: center;
+        font-size: 35px;
+        font-family: Arial;
+        color:green;     
+}
+#gameRules {	
+                        
+	/*width: 700px;*/	
+         width: 70%;		
+	height: 280px;			
+	position: absolute;
+        left: 50%;
+	top: 50%;	
+        transform: translate(-50%,-50%); 	
+	background:#46EDFF;
+        border: 3px dashed blue;	
+	text-align: left;
+         font-size: 20px;
+        color: red;
+        Z-index:200;   
+         opacity:0.7;
+        /*overflow: hidden;*/                     
+}
+#wrapMain {
+     margin: 10px auto;
+      /*width: 900px;*/
+        width: 70%;
+	height: 400px;
+	background: #73FFC9;
+        border: 3px solid red;
+        border-radius:10px;
+	position: relative;        
+        text-align: center;
+        font-size: 25px;
+        font-family: Arial;
+        color:blue;     
+}

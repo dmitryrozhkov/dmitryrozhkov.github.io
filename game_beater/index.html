@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>my_site</title>
+         <link rel="stylesheet" href="style.css" type="text/css">
+         <script src='http://fe.it-academy.by/JQ/jquery.js'></script>
+</head>
+<body>
+
+<div style='margin: 10px auto; font-size:25px; font-family:Arial; color:red; text-align:center'><b>НАРОДНАЯ ДЕТСКАЯ ИГРА B ВЫБИВАЛКИ</b><br><br>
+<input type="button" value="Главная" onclick="switchToMainPage()" id='spaMain'>
+<input type="button" value="Правила" onclick="switchToRulesPage()" id = 'spaRules'>
+<input type="button" value="Игра" onclick="switchToGamePage()" id = 'spaGame'>
+<input type="button" value="Таблица рекордов" onclick="switchToTablePage()" id = 'spaTable'></div>
+<div id="IPage">
+</div>
+
+
+
+<script>
+"use strict"; 
+
+
+
+
+// в закладке УРЛа будем хранить разделённые подчёркиваниями слова 
+// #Main - главная 
+// #Rules - отобразить правила игры
+// #Game - игра
+// #Table - таблица рекордов
+
+// отслеживаем изменение закладки в УРЛе 
+// оно происходит при любом виде навигации 
+// в т.ч. при нажатии кнопок браузера ВПЕРЁД/НАЗАД 
+window.onhashchange=switchToStateFromURLHash; 
+
+//текущее состояние приложения 
+// это Model из MVC 
+var SPAState={};
+ 
+ 
+// вызывается при изменении закладки УРЛа 
+// а также при первом открытии страницы 
+// читает новое состояние приложения из закладки УРЛа 
+// и обновляет ВСЮ вариабельную часть веб-страницы 
+// соответственно этому состоянию 
+// это упрощённая реализация РОУТИНГА - автоматического выполнения нужных 
+// частей кода в зависимости от формы URLа 
+// "роутинг" и есть "контроллер" из MVC - управление приложением через URL 
+
+function switchToStateFromURLHash() { 
+var URLHash=window.location.hash; 
+
+// убираем из закладки УРЛа решётку 
+// (по-хорошему надо ещё убирать восклицательный знак, если есть) 
+var stateStr=URLHash.substr(1); 
+
+if ( stateStr!="" ) { // если закладка непустая, читаем из неё состояние и отображаем 
+var parts=stateStr.split("_") 
+SPAState={ pagename: parts[0] }; 
+// первая часть закладки - номер страницы 
+} 
+else 
+SPAState={pagename:'Main'}; // иначе показываем главную страницу
+ 
+console.log('Новое состояние приложения:'); 
+console.log(SPAState);
+ 
+// обновляем вариабельную часть страницы под текущее состояние 
+// это реализация View из MVC - отображение состояния модели в HTML-код 
+var pageHTML=""; 
+switch ( SPAState.pagename ) { 
+case 'Main': 
+
+function testLoadDataMainHtml() {       
+        $.ajax("http://fe.it-academy.by/Sites/0025251/mainPage.html",         
+            { type:'GET', dataType:'html', success:dataLoadedMainHtml, error:errorHandlerMainHtml }
+        );
+    }
+
+    function dataLoadedMainHtml(data) {
+        console.log('загруженные через AJAX данные:');
+        console.log(data);
+
+        document.getElementById('IPage').innerHTML=data;
+    }
+
+    function errorHandlerMainHtml(jqXHR,statusStr,errorStr) {
+        alert(statusStr+' '+errorStr);
+    }
+
+testLoadDataMainHtml();
+
+
+break;
+
+
+
+case 'Rules':
+
+function testLoadDataHtml() {      
+        $.ajax("http://fe.it-academy.by/Sites/0025251/rulesPage.html",          
+            { type:'GET', dataType:'html', success:dataLoadedHtml, error:errorHandlerHtml }
+        );
+    }
+
+    function dataLoadedHtml(data) {
+        console.log('загруженные через AJAX данные:');
+        console.log(data);
+
+        document.getElementById('IPage').innerHTML=data;
+    }
+
+    function errorHandlerHtml(jqXHR,statusStr,errorStr) {
+        alert(statusStr+' '+errorStr);
+    }
+
+testLoadDataHtml();
+
+break; 
+
+
+case 'Game':
+
+function testLoadDataGameHtml() {       
+        $.ajax("http://fe.it-academy.by/Sites/0025251/gamePage.html",      
+            { type:'GET', dataType:'html', success:dataLoadedGameHtml, error:errorHandlerGameHtml }
+        );
+    }
+
+    function dataLoadedGameHtml(data) {
+        console.log('загруженные через AJAX данные:');
+        console.log(data);
+
+        document.getElementById('IPage').innerHTML=data;
+    }
+
+    function errorHandlerGameHtml(jqXHR,statusStr,errorStr) {
+        alert(statusStr+' '+errorStr);
+    }
+
+testLoadDataGameHtml();
+
+
+function testLoadGameScript() {     
+        $.ajax("http://fe.it-academy.by/Sites/0025251/game_1.js",       
+           { type:'GET', dataType:'script', success:dataLoadedGame, error:errorHandlerGame }           
+        );
+    }
+
+    function dataLoadedGame(data) {
+        console.log('загруженные через AJAX данные:');
+        console.log(data);       
+    }
+
+    function errorHandlerGame(jqXHR,statusStr,errorStr) {
+        alert(statusStr+' '+errorStr);
+    }
+testLoadGameScript();
+ 
+break;
+
+case 'Table':
+pageHTML+="<div id = 'wrapTable'><div id = 'tableRecords'></div></div>";
+
+function testLoadScript_1() {      
+        $.ajax("http://fe.it-academy.by/Sites/0025251/tableRecords.js",     
+           { type:'GET', dataType:'script', success:dataLoaded_1, error:errorHandler_1 }           
+        );
+    }
+
+    function dataLoaded_1(data) {
+        console.log('загруженные через AJAX данные:');
+        console.log(data);        
+    }
+
+    function errorHandler_1(jqXHR,statusStr,errorStr) {
+        alert(statusStr+' '+errorStr);
+    }
+testLoadScript_1();
+
+
+break; 
+
+}
+
+document.getElementById('IPage').innerHTML=pageHTML;
+} 
+
+
+
+// устанавливает в закладке УРЛа новое состояние приложения 
+// и затем устанавливает+отображает это состояние
+ 
+function switchToState(newState) { // устанавливаем закладку УРЛа 
+// нужно для правильной работы кнопок навигации браузера 
+// (т.к. записывается новый элемент истории просмотренных страниц) 
+// и для возможности передачи УРЛа другим лицам
+ 
+var stateStr=newState.pagename;
+location.hash=stateStr;
+ 
+// АВТОМАТИЧЕСКИ вызоветсяswitchToStateFromURLHash() 
+// т.к. закладка УРЛа изменилась (ЕСЛИ она действительно изменилась) 
+} 
+
+function switchToMainPage() { 
+switchToState( { pagename:'Main' } ); 
+} 
+
+
+function switchToRulesPage() { 
+switchToState( { pagename:'Rules' } ); 
+} 
+
+function switchToGamePage() { 
+switchToState( { pagename:'Game' } );
+} 
+
+function switchToTablePage() { 
+switchToState( { pagename:'Table' } );
+} 
+
+// переключаемся в состояние, которое сейчас прописано в закладке УРЛ
+switchToStateFromURLHash();
+
+</script>
+
+
+</body>
+</html>
