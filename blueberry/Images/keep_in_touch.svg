@@ -1,0 +1,15 @@
+<svg width="140" height="40" xmlns="http://www.w3.org/2000/svg">
+ <!-- Created with Method Draw - http://github.com/duopixel/Method-Draw/ -->
+ <g>
+  <title>background</title>
+  <rect fill="none" id="canvas_background" height="42" width="142" y="-1" x="-1"/>
+  <g display="none" overflow="visible" y="0" x="0" height="100%" width="100%" id="canvasGrid">
+   <rect fill="url(#gridpattern)" stroke-width="0" y="0" x="0" height="100%" width="100%"/>
+  </g>
+ </g>
+ <g>
+  <title>Layer 1</title>
+  <rect stroke="#000" id="svg_1" height="39.999998" width="139.999995" y="0" x="0" rx="5" stroke-width="0" fill="#8aad2d"/>
+  <text font-weight="normal" stroke="#000" transform="matrix(1.4172853007458688,0,0,1.5451720063131016,-116.22408557723584,-0.792903340271796) " xml:space="preserve" text-anchor="start" font-family="Oswald, sans-serif" font-size="10" id="svg_2" y="17.5" x="87.000001" stroke-opacity="null" stroke-width="0" fill="#ffffff">ОБРАТНАЯ СВЯЗЬ</text>
+ </g>
+</svg>
