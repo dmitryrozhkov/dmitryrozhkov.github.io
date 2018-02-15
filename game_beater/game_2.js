@@ -106,7 +106,7 @@ function collisionDetection() {
                         startButton.style.display = 'inline-block';
 
                         function testLoadScript() {      
-        $.ajax("http://dmitryrozhkov.github.io/game_beater/game_3.js",
+        $.ajax("https://dmitryrozhkov.github.io/game_beater/game_3.js",
             { type:'GET', dataType:'script', success:dataLoaded, error:errorHandler }
         );
     }
