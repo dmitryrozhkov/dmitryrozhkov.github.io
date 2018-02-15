@@ -224,7 +224,7 @@ function collisionDetection() { //функция по выбиванию кир�
                         startButton.style.display = 'inline-block'; //показываем кнопку старт для следующего уровня игры
 
                         function testLoadScript() { //загружаем скрипт (новая комната  с двумя уровнями кирпичей)     
-        $.ajax("http://fe.it-academy.by/Sites/0025251/game_2.js",
+        $.ajax("https://dmitryrozhkov.github.io/game_beater/game_2.js",
             { type:'GET', dataType:'script', success:dataLoaded, error:errorHandler }
         );
     }
