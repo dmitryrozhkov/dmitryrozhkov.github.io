@@ -74,7 +74,7 @@ switch ( SPAState.pagename ) {
 case 'Main': 
 
 function testLoadDataMainHtml() {       
-        $.ajax("http://fe.it-academy.by/Sites/0025251/mainPage.html",         
+        $.ajax("https://dmitryrozhkov.github.io/game_beater/mainPage.html",         
             { type:'GET', dataType:'html', success:dataLoadedMainHtml, error:errorHandlerMainHtml }
         );
     }
@@ -100,7 +100,7 @@ break;
 case 'Rules':
 
 function testLoadDataHtml() {      
-        $.ajax("http://fe.it-academy.by/Sites/0025251/rulesPage.html",          
+        $.ajax("https://dmitryrozhkov.github.io/game_beater/rulesPage.html",          
             { type:'GET', dataType:'html', success:dataLoadedHtml, error:errorHandlerHtml }
         );
     }
@@ -124,7 +124,7 @@ break;
 case 'Game':
 
 function testLoadDataGameHtml() {       
-        $.ajax("http://fe.it-academy.by/Sites/0025251/gamePage.html",      
+        $.ajax("https://dmitryrozhkov.github.io/game_beater/gamePage.html",      
             { type:'GET', dataType:'html', success:dataLoadedGameHtml, error:errorHandlerGameHtml }
         );
     }
@@ -144,7 +144,7 @@ testLoadDataGameHtml();
 
 
 function testLoadGameScript() {     
-        $.ajax("http://fe.it-academy.by/Sites/0025251/game_1.js",       
+        $.ajax("https://dmitryrozhkov.github.io/game_beater/game_1.js",       
            { type:'GET', dataType:'script', success:dataLoadedGame, error:errorHandlerGame }           
         );
     }
@@ -165,7 +165,7 @@ case 'Table':
 pageHTML+="<div id = 'wrapTable'><div id = 'tableRecords'></div></div>";
 
 function testLoadScript_1() {      
-        $.ajax("http://fe.it-academy.by/Sites/0025251/tableRecords.js",     
+        $.ajax("https://dmitryrozhkov.github.io/game_beater/tableRecords.js",     
            { type:'GET', dataType:'script', success:dataLoaded_1, error:errorHandler_1 }           
         );
     }
