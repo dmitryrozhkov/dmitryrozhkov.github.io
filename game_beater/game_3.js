@@ -108,7 +108,7 @@ function collisionDetection() {
                         
 
                         function testLoadScript() {      
-        $.ajax("http://dmitryrozhkov.github.io/game_beater/game_1.js",
+        $.ajax("https://dmitryrozhkov.github.io/game_beater/game_1.js",
             { type:'GET', dataType:'script', success:dataLoaded, error:errorHandler }
         );
     }
