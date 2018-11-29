@@ -18,7 +18,7 @@
 
 // Читаем таблицу рекордов из хранидища на сервере AjaxStringStorage2
 
-var ajaxHandlerScript="http://fe.it-academy.by/AjaxStringStorage2.php";
+var ajaxHandlerScript="https://fe.it-academy.by/AjaxStringStorage2.php";
 var messages; // элемент массива - {name:'Иванов',mess:'Привет'};
 var updatePassword;
 var stringName='ROZHKOV_TEST_INFO';
